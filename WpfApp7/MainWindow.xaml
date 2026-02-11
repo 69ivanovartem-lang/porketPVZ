@@ -1,0 +1,182 @@
+﻿<Window x:Class="WpfApp7.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ПВЗ - Пункт Выдачи Заказов" 
+        Height="750" Width="1200"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <!-- ШАПКА -->
+        <Border Grid.Row="0" Background="#2196F3" Padding="20">
+            <StackPanel>
+                <TextBlock Text="🏪 ПВЗ №127 - Система Управления" 
+                          FontSize="24" 
+                          FontWeight="Bold" 
+                          Foreground="White"/>
+                <TextBlock Text="Панель управления пунктом выдачи заказов" 
+                          FontSize="14" 
+                          Foreground="White" 
+                          Opacity="0.9"/>
+            </StackPanel>
+        </Border>
+
+        <!-- ОСНОВНАЯ ОБЛАСТЬ -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="220"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- ЛЕВАЯ ПАНЕЛЬ - МЕНЮ -->
+            <Border Grid.Column="0" Background="#f5f5f5" BorderThickness="0 0 1 0" BorderBrush="#e0e0e0">
+                <StackPanel>
+                    <!-- ИНФОРМАЦИЯ О ПВЗ -->
+                    <Border Background="#E3F2FD" Margin="10" Padding="15" CornerRadius="8">
+                        <StackPanel>
+                            <TextBlock Text="🏪 ПВЗ №127" 
+                                      FontWeight="Bold" 
+                                      FontSize="16" 
+                                      Foreground="#1565C0"/>
+                            <TextBlock Text="ул. Центральная, 15" 
+                                      FontSize="12" 
+                                      Foreground="#546E7A"/>
+                            <TextBlock Text="📞 +7 (999) 123-45-67" 
+                                      FontSize="12" 
+                                      Foreground="#546E7A"/>
+                            <Border Background="#4CAF50" 
+                                   CornerRadius="10" 
+                                   Padding="5,2" 
+                                   Margin="0,5,0,0">
+                                <TextBlock Text="🟢 ОТКРЫТО" 
+                                          Foreground="White" 
+                                          FontSize="11" 
+                                          FontWeight="Bold" 
+                                          HorizontalAlignment="Center"/>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- МЕНЮ -->
+                    <StackPanel Margin="10">
+                        <Button x:Name="btnMenuOrders" 
+                               Content="📦 УПРАВЛЕНИЕ ЗАКАЗАМИ" 
+                               Height="45" 
+                               Background="#2196F3"
+                               Foreground="White"
+                               BorderThickness="0"
+                               FontSize="14"
+                               FontWeight="Bold"/>
+
+                        <Button x:Name="btnMenuStorage" 
+                               Content="📁 СКЛАД И ОСТАТКИ" 
+                               Height="45" 
+                               Background="Transparent"
+                               Foreground="#333"
+                               BorderThickness="0"
+                               FontSize="14"
+                               Margin="0,5,0,0"/>
+
+                        <Button x:Name="btnMenuCustomers" 
+                               Content="👥 БАЗА КЛИЕНТОВ" 
+                               Height="45" 
+                               Background="Transparent"
+                               Foreground="#333"
+                               BorderThickness="0"
+                               FontSize="14"
+                               Margin="0,5,0,0"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <!-- ПРАВАЯ ПАНЕЛЬ - КОНТЕНТ -->
+            <Grid Grid.Column="1">
+                <!-- ЭКРАН ЗАКАЗОВ -->
+                <Grid x:Name="gridOrders" Visibility="Visible">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- ПАНЕЛЬ ИНСТРУМЕНТОВ -->
+                    <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="20,20,20,10">
+                        <Button x:Name="btnAddOrder" 
+                               Content="+ НОВЫЙ ЗАКАЗ" 
+                               Background="#2196F3" 
+                               Foreground="White" 
+                               Padding="15,10"
+                               FontSize="14"
+                               FontWeight="Bold"/>
+
+                        <ComboBox x:Name="cmbFilterStatus" 
+                                 Width="150" 
+                                 Margin="20,0,0,0"
+                                 SelectedIndex="0">
+                            <ComboBoxItem>Все статусы</ComboBoxItem>
+                            <ComboBoxItem>Ожидает</ComboBoxItem>
+                            <ComboBoxItem>В пути</ComboBoxItem>
+                            <ComboBoxItem>Доставлен</ComboBoxItem>
+                        </ComboBox>
+
+                        <TextBox x:Name="txtSearch" 
+                                Width="250" 
+                                Margin="20,0,0,0" 
+                                Padding="10,8"
+                                VerticalContentAlignment="Center"
+                                Text="Поиск..."/>
+                    </StackPanel>
+
+                    <!-- ТАБЛИЦА ЗАКАЗОВ -->
+                    <DataGrid x:Name="dgOrders" 
+                             Grid.Row="2" 
+                             Margin="20,0,20,20"
+                             AutoGenerateColumns="False"
+                             CanUserAddRows="False"
+                             IsReadOnly="True"
+                             SelectionMode="Single">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="№ ЗАКАЗА" Width="100"/>
+                            <DataGridTextColumn Header="КЛИЕНТ" Width="180"/>
+                            <DataGridTextColumn Header="ТЕЛЕФОН" Width="130"/>
+                            <DataGridTextColumn Header="СТАТУС" Width="120"/>
+                            <DataGridTextColumn Header="ДАТА" Width="120"/>
+                            <DataGridTextColumn Header="СУММА" Width="100"/>
+                            <DataGridTemplateColumn Header="ДЕЙСТВИЯ" Width="150">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Content="👁" 
+                                                   Background="#2196F3"
+                                                   Foreground="White"
+                                                   Padding="8"
+                                                   Width="35"/>
+                                            <Button Content="✓" 
+                                                   Background="#4CAF50"
+                                                   Foreground="White"
+                                                   Padding="8"
+                                                   Width="35"
+                                                   Margin="5,0"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- ПОДВАЛ -->
+        <Border Grid.Row="2" Background="#f5f5f5" Padding="10">
+            <TextBlock Text="© 2024 Система управления ПВЗ" 
+                      Foreground="#666" 
+                      HorizontalAlignment="Center"/>
+        </Border>
+    </Grid>
+</Window>
