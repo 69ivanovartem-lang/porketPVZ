@@ -1,0 +1,15 @@
+C:\Users\Academy\source\repos\PVZApp\bin\Debug\PVZApp.exe.config
+C:\Users\Academy\source\repos\PVZApp\bin\Debug\PVZApp.exe
+C:\Users\Academy\source\repos\PVZApp\bin\Debug\PVZApp.pdb
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.csproj.AssemblyReference.cache
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\MainWindow.baml
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\App.baml
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\MainWindow.g.cs
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\App.g.cs
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp_MarkupCompile.cache
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.g.resources
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.Properties.Resources.resources
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.csproj.GenerateResource.cache
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.csproj.CoreCompileInputs.cache
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.exe
+C:\Users\Academy\source\repos\PVZApp\obj\Debug\PVZApp.pdb

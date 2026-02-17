@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PVZApp", "PVZApp.csproj", "{AB1D561D-C1B3-4E2E-A347-FA89220FC499}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{35D55D05-B54F-4722-AF2B-C674314A670A}"
+	ProjectSection(SolutionItems) = preProject
+		client_example.py = client_example.py
+		run_server.bat = run_server.bat
+		server.py = server.py
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB1D561D-C1B3-4E2E-A347-FA89220FC499}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB1D561D-C1B3-4E2E-A347-FA89220FC499}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB1D561D-C1B3-4E2E-A347-FA89220FC499}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB1D561D-C1B3-4E2E-A347-FA89220FC499}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9D067FDF-08C3-4CD6-A2C5-1F8535A1CC2E}
+	EndGlobalSection
+EndGlobal
